@@ -1,4 +1,15 @@
 
 dependencies {
-    compile project(':frameworks:my-jwt-framework-support')
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.9.0") {
+		force = true // so that there is a security issue
+    }
+
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.9.0") {
+        because 'previous versions have security issues'
+    }
+	
+	implementation project(':frameworks:my-jwt-framework-support')
+    
+
+    
 }
