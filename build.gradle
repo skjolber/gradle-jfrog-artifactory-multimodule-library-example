@@ -13,7 +13,7 @@ def buildProjects() {
 }
 
 def exampleProjects() {
-    buildProjects().findAll { it.name.endsWith("-example")  }
+    buildProjects().findAll { it.name.endsWith("-example") || it.projectDir.path.substring(rootProject.projectDir.path.length()).contains('examples') }
 }
 
 def libraryProjects() {
